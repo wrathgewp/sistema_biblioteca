@@ -9,16 +9,16 @@ dizionario_utenti = {
     'mariorossi': {
         'nome': 'Mario',
         'cognome': 'Rossi',
-        'libri_prestati': ['Il signore degli anelli', 'IT']
+        'libri_prestati': ['Eragon']
     },
     'lucaverdi': {
         'nome': 'Luca',
         'cognome': 'Verdi',
-        'libri_prestati': ['Il nome della rosa', 'Il vecchio e il mare']
+        'libri_prestati': ['Guerra e pace']
     },
     'giuliabianchi': {
         'nome': 'Giulia',
         'cognome': 'Bianchi',
-        'libri_prestati': ['Il signore degli anelli', 'Il nome della rosa']
+        'libri_prestati': ['Se questo è un uomo']
     }
 }
