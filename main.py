@@ -6,17 +6,17 @@ nome, cognome, libri_prestati (una lista di titoli di libri prestati).
 
 # Questo è un esempio di come potrebbe essere strutturato il dizionario degli utenti
 dizionario_utenti = {
-    'utente1': {
+    'mariorossi': {
         'nome': 'Mario',
         'cognome': 'Rossi',
         'libri_prestati': ['Il signore degli anelli', 'IT']
     },
-    'utente2': {
+    'lucaverdi': {
         'nome': 'Luca',
         'cognome': 'Verdi',
         'libri_prestati': ['Il nome della rosa', 'Il vecchio e il mare']
     },
-    'utente3': {
+    'giuliabianchi': {
         'nome': 'Giulia',
         'cognome': 'Bianchi',
         'libri_prestati': ['Il signore degli anelli', 'Il nome della rosa']
