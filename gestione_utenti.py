@@ -29,20 +29,44 @@ il nome dell'utente e lo rimuove dalla lista se esiste.
 '''
 
 
-def rimuovi_utente(nome, cognome, dizionario_utenti):
-    # Trova il nome
-    username = nome.lower() + cognome.lower()
-    # Controlla se l'utente è presente nella lista
-    if username in dizionario_utenti:
-        # Elimina l'utente e i suoi dati
-        del dizionario_utenti[username]
-        print("Utente " + nome + " " + cognome + " rimosso")
-    else:
+def rimuovi_utente(nome, dizionario_utenti):
+    # Crea una lista di utenti da rimuovere
+    utenti_da_rimuovere = []
+    for username in dizionario_utenti:
+        if dizionario_utenti[username]['nome'] == nome:
+            utenti_da_rimuovere.append(username)
+    # Se non è presente nessun utente con quel nome
+    if len(utenti_da_rimuovere) == 0:
         # Se l'utente non è presente nella lista, si limita a segnalarlo
-        print("Utente " + nome + " " + cognome + " non trovato")
+        print("Utente " + nome + " non trovato")
+    # Se è presente un solo utente con quel nome
+    elif len(utenti_da_rimuovere) == 1:
+        for username in utenti_da_rimuovere:
+            # Elimina l'utente e i suoi dati
+            del dizionario_utenti[username]
+            print("Utente " + nome + " rimosso")
+    # Se sono presenti più utenti con quel nome
+    elif len(utenti_da_rimuovere) > 1:
+        print("Sono presenti più utenti con il nome " + nome + ".")
+        print("Selezionare l'utente da rimuovere:")
+        # Stampa la lista degli utenti con quel nome
+        for username in utenti_da_rimuovere:
+            print(username + ": " + dizionario_utenti[username]
+                  ['nome'] + " " + dizionario_utenti[username]['cognome'])
+        # Chiede all'utente di selezionare l'utente da rimuovere
+        username_selezionato = input(
+            "Inserisci l'username dell'utente da rimuovere: ")
+        # Se l'utente selezionato è presente nella lista
+        if username_selezionato in utenti_da_rimuovere:
+            # Elimina l'utente e i suoi dati
+            del dizionario_utenti[username_selezionato]
+            print("Utente " + username_selezionato + " rimosso")
+        else:
+            # Se l'utente selezionato non è presente nella lista, si limita a segnalarlo
+            print("Utente " + username_selezionato + " non trovato")
 
 
 '''
 Esempio di utilizzo
-gestione_utenti.rimuovi_utente("Giovanni", "Bianchi", dizionario_utenti)
+gestione_utenti.rimuovi_utente("Giovanni", dizionario_utenti)
 '''
