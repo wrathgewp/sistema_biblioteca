@@ -40,3 +40,9 @@ def rimuovi_utente(nome, cognome, dizionario_utenti):
     else:
         # Se l'utente non è presente nella lista, si limita a segnalarlo
         print("Utente " + nome + " " + cognome + " non trovato")
+
+
+'''
+Esempio di utilizzo
+gestione_utenti.rimuovi_utente("Giovanni", "Bianchi", dizionario_utenti)
+'''
