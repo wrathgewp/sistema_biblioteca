@@ -3,6 +3,7 @@ Creare una lista di dizionari per rappresentare gli utenti della biblioteca.
 Ogni dizionario deve contenere le seguenti chiavi: 
 nome, cognome, libri_prestati (una lista di titoli di libri prestati).
 '''
+import gestione_utenti
 
 # Questo è un esempio di come potrebbe essere strutturato il dizionario degli utenti
 dizionario_utenti = {
@@ -26,7 +27,7 @@ dizionario_utenti = {
 # Creare una lista di dizionari per rappresentare i libri nella biblioteca. Ogni dizionario deve contenere
 # le seguenti chiavi: titolo, autore, anno_pubblicazione, disponibile (un booleano che indica se il libro è disponibile o meno).
 dizionario_libro = {
-    
+
     "Eragon": {
         "autore": "Jhon",
         "anno_pubblicazione": 2015,
