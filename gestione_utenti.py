@@ -70,3 +70,34 @@ def rimuovi_utente(nome, dizionario_utenti):
 Esempio di utilizzo
 gestione_utenti.rimuovi_utente("Giovanni", dizionario_utenti)
 '''
+
+'''
+Implementare una funzione cerca utente
+che prende come argomento il nome e cognome di un utente
+e stampa a video la lista dei libri prestati all’utente.
+'''
+
+
+def cerca_utente(nome, cognome, dizionario_utenti):
+    # Crea un username dell'utente unendo il nome e il cognome
+    username = nome.lower() + cognome.lower()
+    # Effettua un controllo se l'utente esista o meno usando l'username.
+    # Nel caso in cui non esista, si limita a segnalarlo
+    if username not in dizionario_utenti:
+        print("Utente " + nome + " " + cognome + " non trovato")
+    # Se l'username esiste
+    else:
+        # Se l'utente non ha libri prestati, si limita a segnalarlo
+        if len(dizionario_utenti[username]['libri_prestati']) == 0:
+            print("L'utente " + nome + " " + cognome + " non ha libri prestati")
+        # Se l'utente ha libri prestati, li stampa a schermo
+        else:
+            print("Libri prestati all'utente " + nome + " " + cognome + ":")
+            for libro in dizionario_utenti[username]['libri_prestati']:
+                print(libro)
+
+
+'''
+Esempio di utilizzo:
+gestione_utenti.cerca_utente("Mario", "Rossi", dizionario_utenti)
+'''
