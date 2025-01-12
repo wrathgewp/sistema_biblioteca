@@ -43,27 +43,29 @@ def rimuovi_utente(nome, dizionario_utenti):
     elif len(utenti_da_rimuovere) == 1:
         for username in utenti_da_rimuovere:
             # Elimina l'utente e i suoi dati
+            print("\nUtente " + dizionario_utenti[username]['nome'] + " " +
+                  dizionario_utenti[username]['cognome'] + " rimosso")
             del dizionario_utenti[username]
-            print("Utente " + nome + " rimosso")
     # Se sono presenti più utenti con quel nome
     elif len(utenti_da_rimuovere) > 1:
-        print("Sono presenti più utenti con il nome " + nome + ".")
-        print("Selezionare l'utente da rimuovere:")
+        print("\nSono presenti più utenti con il nome " + nome + ".")
+        print("\nSelezionare l'utente da rimuovere:\n")
         # Stampa la lista degli utenti con quel nome
         for username in utenti_da_rimuovere:
             print(username + ": " + dizionario_utenti[username]
                   ['nome'] + " " + dizionario_utenti[username]['cognome'])
         # Chiede all'utente di selezionare l'utente da rimuovere
         username_selezionato = input(
-            "Inserisci l'username dell'utente da rimuovere: ")
+            "\nInserisci l'username dell'utente da rimuovere: ")
         # Se l'utente selezionato è presente nella lista
         if username_selezionato in utenti_da_rimuovere:
             # Elimina l'utente e i suoi dati
+            print("\nUtente " + dizionario_utenti[username]['nome'] + " " +
+                  dizionario_utenti[username]['cognome'] + " rimosso")
             del dizionario_utenti[username_selezionato]
-            print("Utente " + username_selezionato + " rimosso")
         else:
             # Se l'utente selezionato non è presente nella lista, si limita a segnalarlo
-            print("Utente " + username_selezionato + " non trovato")
+            print("\nUtente " + username_selezionato + " non trovato")
 
 
 '''
@@ -84,15 +86,16 @@ def cerca_utente(nome, cognome, dizionario_utenti):
     # Effettua un controllo se l'utente esista o meno usando l'username.
     # Nel caso in cui non esista, si limita a segnalarlo
     if username not in dizionario_utenti:
-        print("Utente " + nome + " " + cognome + " non trovato")
+        print("\nUtente " + nome + " " + cognome + " non trovato")
     # Se l'username esiste
     else:
         # Se l'utente non ha libri prestati, si limita a segnalarlo
         if len(dizionario_utenti[username]['libri_prestati']) == 0:
-            print("L'utente " + nome + " " + cognome + " non ha libri prestati")
+            print("\nL'utente " + nome + " " +
+                  cognome + " non ha libri prestati")
         # Se l'utente ha libri prestati, li stampa a schermo
         else:
-            print("Libri prestati all'utente " + nome + " " + cognome + ":")
+            print("\nLibri prestati all'utente " + nome + " " + cognome + ":")
             for libro in dizionario_utenti[username]['libri_prestati']:
                 print(libro)
 

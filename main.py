@@ -46,3 +46,45 @@ dizionario_libro = {
         "disponibile": False
     }
 }
+
+'''
+Creare un menu interattivo
+che permetta all'utente di scegliere tra le diverse funzionalità
+(aggiungere, rimuovere, cercare, prestare, restituire un libro, aggiungere, rimuovere un utente)
+e chiamare le funzioni appropriate.
+'''
+print("\nBenvenuto nella biblioteca!")
+while True:
+    print("\nCosa vuoi fare?\n")
+    print("1. Aggiungi un utente")
+    print("2. Rimuovi un utente")
+    print("3. Cerca un utente")
+    print("4. Presta un libro")
+    print("5. Restituisci un libro")
+    print("6. Esci")
+    scelta = input(
+        "\nInserisci il numero corrispondente all'azione che vuoi eseguire: ")
+
+    if scelta == "1":
+        nome = input("Inserisci il nome dell'utente: ")
+        cognome = input("\nInserisci il cognome dell'utente: ")
+        gestione_utenti.aggiungi_utente(nome, cognome, dizionario_utenti)
+    elif scelta == "2":
+        nome = input("\nInserisci il nome dell'utente che vuoi rimuovere: ")
+        gestione_utenti.rimuovi_utente(nome, dizionario_utenti)
+    elif scelta == "3":
+        nome = input("\nInserisci il nome dell'utente che vuoi cercare: ")
+        cognome = input(
+            "\nInserisci il cognome dell'utente che vuoi cercare: ")
+        gestione_utenti.cerca_utente(nome, cognome, dizionario_utenti)
+    elif scelta == "4":
+        print()
+        # Da implementare, in attesa della funzione
+    elif scelta == "5":
+        print()
+        # Da implementare, in attesa della funzione
+    elif scelta == "6":
+        print("Grazie per aver scelto la nostra biblioteca!")
+        break
+    else:
+        print("Scelta non valida. Riprova.")
