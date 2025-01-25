@@ -46,13 +46,19 @@ dizionario_libro = {
         "disponibile": False
     }
 }
-
 '''
 Creare un menu interattivo
 che permetta all'utente di scegliere tra le diverse funzionalità
 (aggiungere, rimuovere, cercare, prestare, restituire un libro, aggiungere, rimuovere un utente)
 e chiamare le funzioni appropriate.
 '''
+
+# biblioteca.py
+import gestione_utenti
+
+# Dizionario degli utenti (inizializzato vuoto)
+dizionario_utenti = {}
+
 print("\nBenvenuto nella biblioteca!")
 
 while True:
@@ -64,6 +70,7 @@ while True:
     print("3. Cerca un utente")
     print("4. Presta un libro")
     print("5. Restituisci un libro")
+
     print("6. Aggiungi un libro")
     print("7. Rimuovi un libro")
     print("8. Cerca un libro")
@@ -99,14 +106,18 @@ while True:
         gestione_utenti.cerca_utente(nome, cognome, dizionario_utenti)
 
     elif scelta == "4":
-
-        print()
-        # Da implementare, in attesa della funzione
+        # Presta un libro
+        nome = input("Inserisci il nome dell'utente: ")
+        cognome = input("Inserisci il cognome dell'utente: ")
+        libro = input("Inserisci il titolo del libro da prestare: ")
+        gestione_utenti.presta_libro(nome, cognome, libro, dizionario_utenti)
 
     elif scelta == "5":
-
-        print()
-        # Da implementare, in attesa della funzione
+        # Restituisci un libro
+        nome = input("Inserisci il nome dell'utente: ")
+        cognome = input("Inserisci il cognome dell'utente: ")
+        libro = input("Inserisci il titolo del libro da restituire: ")
+        gestione_utenti.restituisci_libro(nome, cognome, libro, dizionario_utenti)
 
     elif scelta == "6":
 
@@ -132,5 +143,4 @@ while True:
     # Se l'utente ha inserito un numero diverso da 1, 2, 3, 4, 5 o 6
     # O se ha inserito un valore non numerico
     else:
-
         print("Scelta non valida. Riprova.")
