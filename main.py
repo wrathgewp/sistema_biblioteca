@@ -64,7 +64,10 @@ while True:
     print("3. Cerca un utente")
     print("4. Presta un libro")
     print("5. Restituisci un libro")
-    print("6. Esci")
+    print("6. Aggiungi un libro")
+    print("7. Rimuovi un libro")
+    print("8. Cerca un libro")
+    print("0. Esci")
 
     # Chiede all'utente di selezionare un'opzione
     scelta = input(
@@ -106,6 +109,21 @@ while True:
         # Da implementare, in attesa della funzione
 
     elif scelta == "6":
+
+        print()
+        # Da implementare, in attesa della funzione
+
+    elif scelta == "7":
+
+        print()
+        # Da implementare, in attesa della funzione
+
+    elif scelta == "8":
+
+        print()
+        # Da implementare, in attesa della funzione
+
+    elif scelta == "0":
 
         # Se l'utente ha scelto di uscire, esce dal ciclo while
         print("Grazie per aver scelto la nostra biblioteca!")
