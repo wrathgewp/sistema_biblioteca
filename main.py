@@ -52,6 +52,7 @@ che permetta all'utente di scegliere tra le diverse funzionalità
 (aggiungere, rimuovere, cercare, prestare, restituire un libro, aggiungere, rimuovere un utente)
 e chiamare le funzioni appropriate.
 '''
+
 # biblioteca.py
 import gestione_utenti
 
@@ -61,6 +62,7 @@ dizionario_utenti = {}
 print("\nBenvenuto nella biblioteca!")
 
 while True:
+
     # Stampa il menu
     print("\nCosa vuoi fare?\n")
     print("1. Aggiungi un utente")
@@ -68,27 +70,39 @@ while True:
     print("3. Cerca un utente")
     print("4. Presta un libro")
     print("5. Restituisci un libro")
-    print("6. Esci")
+
+    print("6. Aggiungi un libro")
+    print("7. Rimuovi un libro")
+    print("8. Cerca un libro")
+    print("0. Esci")
 
     # Chiede all'utente di selezionare un'opzione
-    scelta = input("\nInserisci il numero corrispondente all'azione che vuoi eseguire: ")
+    scelta = input(
+        "\nInserisci il numero corrispondente all'azione che vuoi eseguire: ")
 
+    # Esegue l'azione corrispondente al numero inserito dall'utente
     if scelta == "1":
-        # Aggiungi un utente
+
+        # Chiede all'utente di inserire il nome e il cognome dell'utente
         nome = input("Inserisci il nome dell'utente: ")
-        cognome = input("Inserisci il cognome dell'utente: ")
+        cognome = input("\nInserisci il cognome dell'utente: ")
+        # Esegue la funzione aggiungi_utente all'interno di gestione_utenti.py
         gestione_utenti.aggiungi_utente(nome, cognome, dizionario_utenti)
 
     elif scelta == "2":
-        # Rimuovi un utente
-        nome = input("Inserisci il nome dell'utente da rimuovere: ")
-        cognome = input("Inserisci il cognome dell'utente da rimuovere: ")
-        gestione_utenti.rimuovi_utente(nome, cognome, dizionario_utenti)
+
+        # Chiede all'utente di inserire il nome dell'utente da rimuovere
+        nome = input("\nInserisci il nome dell'utente che vuoi rimuovere: ")
+        # Esegue la funzione rimuovi_utente all'interno di gestione_utenti.py
+        gestione_utenti.rimuovi_utente(nome, dizionario_utenti)
 
     elif scelta == "3":
-        # Cerca un utente
-        nome = input("Inserisci il nome dell'utente che vuoi cercare: ")
-        cognome = input("Inserisci il cognome dell'utente che vuoi cercare: ")
+
+        # Chiede all'utente di inserire il nome e il cognome dell'utente da cercare
+        nome = input("\nInserisci il nome dell'utente che vuoi cercare: ")
+        cognome = input(
+            "\nInserisci il cognome dell'utente che vuoi cercare: ")
+        # Esegue la funzione cerca_utente all'interno di gestione_utenti.py
         gestione_utenti.cerca_utente(nome, cognome, dizionario_utenti)
 
     elif scelta == "4":
@@ -106,9 +120,27 @@ while True:
         gestione_utenti.restituisci_libro(nome, cognome, libro, dizionario_utenti)
 
     elif scelta == "6":
-        # Esci
+
+        print()
+        # Da implementare, in attesa della funzione
+
+    elif scelta == "7":
+
+        print()
+        # Da implementare, in attesa della funzione
+
+    elif scelta == "8":
+
+        print()
+        # Da implementare, in attesa della funzione
+
+    elif scelta == "0":
+
+        # Se l'utente ha scelto di uscire, esce dal ciclo while
         print("Grazie per aver scelto la nostra biblioteca!")
         break
 
+    # Se l'utente ha inserito un numero diverso da 1, 2, 3, 4, 5 o 6
+    # O se ha inserito un valore non numerico
     else:
         print("Scelta non valida. Riprova.")

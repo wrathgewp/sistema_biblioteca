@@ -3,7 +3,6 @@ Implementare una funzione aggiungi utente che prende come argomenti
 il nome e il cognome dell'utente e
 aggiunge un nuovo utente alla lista;
 '''
-
 def aggiungi_utente(nome, cognome, dizionario_utenti):
     username = nome.lower() + cognome.lower()
     if username in dizionario_utenti:
@@ -54,4 +53,3 @@ def restituisci_libro(nome, cognome, libro, dizionario_utenti):
             print(f"Il libro '{libro}' è stato restituito da {nome} {cognome}.")
         else:
             print(f"Il libro '{libro}' non è stato trovato tra i libri prestati a {nome} {cognome}.")
-
